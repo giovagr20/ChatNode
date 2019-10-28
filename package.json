@@ -1,0 +1,28 @@
+{
+  "name": "chatnodev1",
+  "version": "1.0.0",
+  "description": "Chat online nodejs",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "mongoose": "^5.7.7",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giovagr20/ChatNode.git"
+  },
+  "author": "Giovanni Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giovagr20/ChatNode/issues"
+  },
+  "homepage": "https://github.com/giovagr20/ChatNode#readme"
+}
