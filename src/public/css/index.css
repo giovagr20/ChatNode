@@ -3,3 +3,7 @@ body {
   background: -webkit-linear-gradient(to right, #2980b9, #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2980b9, #2c3e50);
 }
+
+#contentWrap{
+  display: none;
+}

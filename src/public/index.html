@@ -10,6 +10,7 @@
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
     crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/ab52e72255.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -18,8 +19,24 @@
         <a href="#" class="navbar-brand">Chat Online</a>
     </nav>
 
-    <div class="container">
-        <div class="col-md-6 mt-4">
+    <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
+        <div class="card-header">
+            <h3>Enter your username: </h3>
+        </div>
+    <p id="nickError"></p>
+    <div class="card-body">
+        <form id="nickForms">
+            <input type="text" id="nickname" class="form-control">
+            <button type="submit" class="btn btn-warning">
+                    <i class="fas fa-arrow-circle-right"></i>
+                Create</button>
+            
+        </form>
+    </div>
+</div>
+
+    <div class="container" id="contentWrap"> 
+        <div class="col-md-6 offset-md-1 mt-4">
             <div class="card">
                 <div class="card-header">
                     <h4>
@@ -31,13 +48,22 @@
                     <div class="input-group">
                             <input type="text" class="form-control" id="message">
                             <div class="input-group-append">
-                                    <input type="submit" class="btn btn-warning" value="Send">
+                                <button type="submit" class="btn btn-warning">
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                    Send</button>   
                             </div>
                     </div>
                     
                 </form>
             </div>
+       
+       
+       
+       
+        <div class="card col-md-3">
+             <div id="usernames"></div>
         </div>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
