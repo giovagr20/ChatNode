@@ -15,6 +15,13 @@ $(function(){
 
     $nickForm.submit(e =>{
         e.preventDefault();
+        if($nickname.val() == ''){
+            $nickError.html(`
+                <div class="alert alert-danger">
+                <i class="fas fa-exclamation-triangle"></i>You must enter an nickname
+                </div>
+                `);
+        }else{
         socket.emit('new user', $nickname.val(), data =>{
             if(data){
                 $('#nickWrap').hide();
@@ -22,12 +29,15 @@ $(function(){
             }else{
                 $nickError.html(`
                 <div class="alert alert-danger">
-                That username already exists
+                <i class="fas fa-exclamation-triangle"></i>That username already exists
                 </div>
                 `);
             }
+        
+    
             $nickname.val('');
         });
+    }
 
     });
 
@@ -39,8 +49,15 @@ $(function(){
     });
 
     socket.on('new message', function(data){
-        $chat.append(data + '<br>');
-
+        $chat.append('<i class="fas fa-portrait"></i><b>' + data.nick + '</b>: ' + data.msg + '</br><hr>');
     });
+
+    socket.on('usernames', data=>{
+        let html = '';
+        for (let i=0; i< data.length; i++){
+            html += `<p><i class="fas fa-user"></i>${data[i]}</p><hr>`
+        }
+        $users.html(html);
+    })
 
 })

@@ -16,7 +16,8 @@
 <body>
     
     <nav class="navbar navbar-light bg-warning">
-        <a href="#" class="navbar-brand">Chat Online</a>
+        <a href="#" class="navbar-brand"><i class="far fa-comments"></i>
+            Chat Online</a>
     </nav>
 
     <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
@@ -28,7 +29,7 @@
         <form id="nickForms">
             <input type="text" id="nickname" class="form-control">
             <button type="submit" class="btn btn-warning">
-                    <i class="fas fa-arrow-circle-right"></i>
+                    <i class="fas fa-location-arrow"></i>
                 Create</button>
             
         </form>
@@ -36,11 +37,12 @@
 </div>
 
     <div class="container" id="contentWrap"> 
-        <div class="col-md-6 offset-md-1 mt-4">
+        <div class="row mt-2">
+        <div class="col-md-6 offset-md-1">
             <div class="card">
                 <div class="card-header">
                     <h4>
-                        Let's chat
+                            <i class="fas fa-comments"></i>Let's chat
                     </h4>
                 </div>
                 <div id="chat" class="card-body"></div>
@@ -49,19 +51,24 @@
                             <input type="text" class="form-control" id="message">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-warning">
-                                        <i class="fas fa-arrow-circle-right"></i>
+                                        <i class="fas fa-location-arrow"></i>
                                     Send</button>   
                             </div>
                     </div>
                     
                 </form>
             </div>
-       
-       
-       
-       
-        <div class="card col-md-3">
-             <div id="usernames"></div>
+        </div>
+              
+        <div class="col-md-3">
+            <div class="card">
+            <div class="card-header">
+                <h3>Users</h3>
+            </div>
+            <div class="card-body">
+                    <div id="usernames"></div>
+            </div>
+        </div>
         </div>
     </div>
     </div>
