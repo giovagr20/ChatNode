@@ -55,8 +55,7 @@ $(function(){
     });
 
     socket.on('new message', function(data){
-        $chat.append('<i class="fas fa-at"></i><b>' + data.nick + '</b>: ' + data.msg + '</br><hr>');
-       
+       displayMsg(data);
     });
 
     socket.on('exit', data=>{
@@ -88,4 +87,13 @@ $(function(){
 
     });
 
+    socket.on('load old msgs', msgs=>{
+        for(let i=0;i<msgs.length;i++){
+            displayMsg(msgs[i]);
+        }
+    });
+
+    function displayMsg(data){
+        $chat.append('<i class="fas fa-at"></i><b>' + data.nick + '</b>: ' + data.msg + '</br><hr>');
+    }
 })
