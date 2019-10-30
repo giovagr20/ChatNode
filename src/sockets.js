@@ -56,9 +56,12 @@ module.exports = function(io){
         if(!socket.nickname) return;
         delete nicknames[socket.nickname];
         logoutUser();
+        logoutUserFront();
     });
 
- 
+    function logoutUserFront(){
+        io.sockets.emit('logout', Object.keys(nicknames));
+    }
     function logoutUser(){
         io.sockets.emit('exit', socket.nickname);
     }

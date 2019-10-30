@@ -62,6 +62,14 @@ $(function(){
     socket.on('exit', data=>{
        $chat.append(`<p> <i class="fas fa-sign-out-alt"></i> ${data} logout! <p><hr>`);
       
+    });
+
+    socket.on('logout', data=>{
+        let html = '';
+        for (let i=0; i< data.length; i++){
+            html += `<p><i class="fas fa-user"></i> ${data[i]}</p><hr>`
+        }
+        $users.html(html);
     })
 
     socket.on('username', data=>{
